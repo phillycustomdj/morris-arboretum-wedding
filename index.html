@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Morris Arboretum Wedding — Philly Custom DJ</title>
+<meta name="description" content="DJ and photo booth services for weddings at the Morris Arboretum since 2013. Real playlists, real reviews, real mixes.">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #ffffff;
+    --muted: #777;
+    --gold: #c9a961;
+    --gold-deep: #a8893f;
+    --green: #1f4a2c;
+    --spotify: #1DB954;
+    --soft: #f8f6f0;
+    --line: #ddd6c4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    background: var(--paper);
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+  header { padding: 18px 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); }
+  header .container { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.01em; }
+  .logo a { color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--gold-deep); }
+  nav a { color: var(--ink); text-decoration: none; margin-left: 28px; font-size: 0.9rem; font-weight: 500; }
+  nav a:hover { color: var(--gold-deep); }
+  nav .btn { background: var(--ink); color: white; padding: 10px 20px; border-radius: 2px; font-weight: 700; letter-spacing: 0.02em; }
+  nav .btn:hover { color: white; background: var(--green); }
+
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a2a1f 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 28px;
+  }
+  .hero-content { max-width: 800px; }
+  .hero .eyebrow { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.25em; font-weight: 700; margin-bottom: 24px; }
+  .hero h1 {
+    font-size: 4.2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    line-height: 1.0;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  }
+  .hero .lede { font-size: 1.25rem; max-width: 640px; margin: 0 auto 32px; color: rgba(255,255,255,0.95); }
+  .hero .since { display: inline-block; padding: 8px 20px; border: 1px solid var(--gold); color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
+  .intro-video { padding: 64px 0; background: var(--ink); }
+  .intro-video .container { max-width: 900px; }
+  .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  .shorts-wrap { position: relative; padding-bottom: 177.78%; height: 0; max-width: 320px; margin: 24px auto; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+  .shorts-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  section { padding: 88px 0; }
+  section.alt { background: var(--soft); }
+  section.dark { background: var(--ink); color: white; }
+  section.dark h2, section.dark h3 { color: white; }
+  section.dark .section-lede { color: rgba(255,255,255,0.7); }
+
+  .section-eyebrow { color: var(--gold-deep); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 12px; }
+  section h2 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.1; }
+  section .section-lede { color: var(--muted); margin-bottom: 40px; max-width: 720px; font-size: 1.1rem; }
+
+  .sub { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--line); }
+  .sub:first-of-type { border-top: 0; padding-top: 0; }
+  .sub h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .sub h3::before { content: ''; display: inline-block; width: 32px; height: 2px; background: var(--gold); vertical-align: middle; margin-right: 14px; }
+  .sub p { color: var(--ink); margin-bottom: 20px; max-width: 720px; }
+  .sub figure { margin: 24px 0; }
+  .sub figure img { width: 100%; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+
+  .mixcloud-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 32px; }
+  .mixcloud-grid iframe { width: 100%; height: 120px; border: 0; }
+
+  .playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .playlist-card iframe {
+    width: 100%;
+    height: 352px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: block;
+  }
+  .playlist-meta { margin-top: 14px; padding: 0 4px; }
+  .playlist-meta .date { font-weight: 700; font-size: 0.9rem; color: var(--ink); letter-spacing: 0.02em; }
+  .playlist-meta .note { color: var(--muted); font-size: 0.92rem; margin-top: 4px; line-height: 1.5; }
+
+  .testimonial {
+    margin-bottom: 28px;
+    padding: 40px;
+    background: white;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .testimonial:last-child { margin-bottom: 0; }
+  .testimonial .quote-mark { font-family: Georgia, serif; font-size: 4rem; line-height: 0.5; color: var(--gold); margin-bottom: 16px; }
+  .testimonial .quote { color: var(--ink); margin-bottom: 24px; font-size: 1.05rem; line-height: 1.7; }
+  .testimonial .who { font-weight: 700; color: var(--green); font-size: 0.9rem; padding-top: 16px; border-top: 1px solid var(--line); }
+  .stars { color: var(--gold); margin-bottom: 16px; letter-spacing: 3px; font-size: 1.1rem; }
+
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 32px; }
+  .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.3s; }
+  .gallery img:hover { transform: scale(1.02); }
+
+  .cta {
+    padding: 96px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a2a1f 100%);
+    color: white;
+  }
+  .cta h2 { font-size: 2.6rem; margin-bottom: 20px; color: white; }
+  .cta p { color: rgba(255,255,255,0.85); margin-bottom: 36px; font-size: 1.1rem; }
+  .cta a { display: inline-block; padding: 16px 32px; text-decoration: none; font-weight: 700; margin: 6px; letter-spacing: 0.04em; font-size: 0.9rem; text-transform: uppercase; }
+  .cta a.primary { background: var(--gold); color: var(--ink); }
+  .cta a.primary:hover { background: white; }
+  .cta a.secondary { background: transparent; color: white; border: 1px solid white; }
+  .cta a.secondary:hover { background: white; color: var(--ink); }
+
+  footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.9rem; background: var(--ink); }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  @media (max-width: 720px) {
+    .hero { min-height: 60vh; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero .lede { font-size: 1rem; }
+    .mixcloud-grid { grid-template-columns: 1fr; }
+    .playlist-grid { grid-template-columns: 1fr; }
+    nav a:not(.btn) { display: none; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 56px 0; }
+    section h2 { font-size: 1.8rem; }
+    .testimonial { padding: 28px; }
+    .cta h2 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo"><a href="https://phillycustomdj.com">Philly Custom <span>DJ</span></a></div>
+    <nav>
+      <a href="https://phillycustomdj.com/wedding-dj-packages/">Weddings</a>
+      <a href="https://phillycustomdj.com/photobooth/">Photo Booth</a>
+      <a href="https://phillycustomdj.com/booking/" class="btn">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Wedding Venue</div>
+    <h1>Morris Arboretum<br>Wedding</h1>
+    <p class="lede">From the ceremony prelude through the last dance — and the photo booth in between — we'll handle every note your guests hear.</p>
+    <div class="since">DJing the Arboretum Since 2013</div>
+  </div>
+</div>
+
+<div class="intro-video">
+  <div class="container">
+    <div class="shorts-wrap"><iframe src="https://www.youtube-nocookie.com/embed/qpQlYAT__QE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-eyebrow">Reviews</div>
+    <h2>What couples say</h2>
+    <p class="section-lede">Five-star reviews from real Morris Arboretum couples.</p>
+
+    <div class="testimonial">
+      
+      <div class="stars">★★★★★</div>
+      <div class="quote">This DJ company creates unique experiences, not only on the wedding day, but also in the planning process. Adam created an entertaining consultation call for me and my fiancée, highlighting the photo booth and lighting options that they provide. Alex as a DJ was very flexible with our eclectic tastes. I know how hard it must have been to play anime openers, video game soundtracks, and Lady Gaga all in the same playlist, but we and the guests loved the transitions and the range that was displayed. If things go wrong, Philly Custom DJ will be there to help you! We had probably a dozen last-minute changes — Alex handled them with a calm presence that helped us feel like everything was going to be okay.</div>
+      <div class="who">Adrian — Samantha &amp; Adrian's wedding · October 25, 2025 · The Knot</div>
+    </div>
+
+    <div class="testimonial">
+      
+      <div class="stars">★★★★★</div>
+      <div class="quote">Adam went above and beyond what we expected in a DJ. We met at least 4 times over the course of the process to fine-tune all of the wedding logistics and iron out key songs. When we had a number of potential father-daughter dance song selections to choose from, he made it easy, combining the songs together with smooth transitions so my wife and her father could dance to them all. It was a huge hit and seamlessly transitioned into a call for all to the dance floor. The reception was an absolute rager with all the hits; the dance floor was packed, and everyone had a great time.</div>
+      <div class="who">Albert — Elizabeth &amp; Albert's wedding · May 18, 2024 · The Knot</div>
+    </div>
+
+    <div class="testimonial">
+      
+      <div class="stars">★★★★★</div>
+      <div class="quote">Adam at Philly Custom DJ truly went above and beyond to make our wedding day personalized to us. I had a very specific idea of how I envisioned the soundtrack of the day going. Adam not only understood what we were looking for, he encouraged us, worked through our requests with us, and shared so many of his favorite playlists he thought we would enjoy and get inspiration from.</div>
+      <div class="who">Alison — Married May 5, 2018</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Part One</div>
+    <h2>The Ceremony</h2>
+    <p class="section-lede">Your ceremony at the Arboretum can take place in one of several locations. Each has its own character — and its own sound challenges. We've done them all, many times. Our speakers stay hidden so they don't end up in your photos, and every guest hears the officiant clearly no matter how far back they're seated.</p>
+
+    <div class="sub">
+      <h3>Baxter Memorial</h3>
+      <p>The Baxter Memorial has a brick floor that's easier to stand on — particularly if you're wearing heels. It also makes a beautiful spot for a group photo right after the ceremony.</p>
+      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/zqf3g0HPpno" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="sub">
+      <h3>Rose Garden</h3>
+      <p>The Rose Garden is one of our favorite ceremony spots at the Arboretum — intimate, surrounded by blooms, and gorgeous in photos. We position the sound system to stay out of your sightlines and your pictures.</p>
+    </div>
+
+    <div class="sub">
+      <h3>Pennock Garden</h3>
+      <p>Pennock can host either a ceremony or a cocktail hour. Either way, we run on a battery-powered system tucked off to the side so it doesn't interfere with the view or the photos — and every guest still hears every word.</p>
+      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/AePfySLAJaA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="sub">
+      <h3>Rain Plan</h3>
+      <p>If the weather turns, the ceremony moves into the tent. We've done this many times — once everyone's settled, your guests won't even notice the change.</p>
+      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/6SGK3c2t7cs" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-eyebrow">Part Two</div>
+    <h2>Cocktail Hour</h2>
+    <p class="section-lede">We work with you to build a custom mix and set up a sound system wherever you want guests to gather. Here are real cocktail hour mixes from real weddings, streaming on Mixcloud.</p>
+
+    <div class="mixcloud-grid">
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-cocktail-hour%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-2%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-3-trees%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-4-vibin%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-5%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-6-the-stettlers%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-7-team-kill%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-8%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-9%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-10%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-11%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-ona-limb-volume-12%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-13%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-walk-cocktail-hour%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-2-new-orleans%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-3%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fwidener-plaza-cocktail-hour%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fwidener-plaza-cocktail-hour-volume-2%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fthe-rose-garden-cocktail-hour%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Frose-garden-cocktail-hour-may-2025%2F&hide_cover=1"></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Part Three</div>
+    <h2>The Reception</h2>
+    <p class="section-lede">Real playlists from real weddings we've DJed at the Morris Arboretum — exported directly from our DJ software. Hit play on any of them to hear what we played.</p>
+
+    <div class="playlist-grid">
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/0mDDaxF7lFxAxkYEvvpbeP?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta"><div class="date">April 26, 2026</div></div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/4gVlOp3KRtulTm65wgeK69?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">October 10, 2025</div>
+          <div class="note">Upbeat from start to finish — classic rock, pop punk, and a high-BPM dance set. Ginuwine, My Chemical Romance, Bloodhound Gang, Waka Flocka Flame, BigXThaPlug.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/2NzUrR62b2mfqtOp5NTwtX?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">October 4, 2024</div>
+          <div class="note">Bruno Mars, Alicia Keys, Avicii, Queen, Carly Rae Jepsen, and Earth, Wind &amp; Fire.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/4HF0PwB1F7SuOgxf1o0u2L?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta"><div class="date">May 24, 2024</div></div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/6RFxOs8f12E2Tayef6kc6u?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">May 18, 2024</div>
+          <div class="note">Elizabeth &amp; Albert's wedding — Albert left a five-star review (above).</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/1N0e1bZBIL5MeKa6HYhY1F?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">April 13, 2024</div>
+          <div class="note">Super-fabulous wedding on a gorgeous day. Not on this list: the songs for the drag show.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/2BBIihQ6aaLjgsqmonrhE3?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">September 17, 2022</div>
+          <div class="note">Indie dinner with a pop and Latin dance floor set.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/68VezA4AqPY5bUuerhf5Ma?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">August 14, 2022</div>
+          <div class="note">Upbeat hits and KPOP.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/7f1UNKfqtMwcOPjpuD8BbV?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">June 4, 2022</div>
+          <div class="note">Country during dinner, then nothing but hits and bangers all night.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/0NxhjlK1mRBsaVwvhol67r?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">May 14, 2022</div>
+          <div class="note">The Trolls played a significant role — but the highlight was Luchini falling from the sky.</div>
+        </div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/4XnM5yprRtv1CQli2Npzx8?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta"><div class="date">May 5, 2019</div></div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/1x4Sh6Fgo9ZndUt4jQGrBm?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta"><div class="date">October 20, 2018</div></div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/2IHQ7Y8XFwgh4XvFw7uhwW?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta"><div class="date">July 6, 2018</div></div>
+      </div>
+
+      <div class="playlist-card">
+        <iframe src="https://open.spotify.com/embed/playlist/3jPL8sESwQsj6oopQ2sQTZ?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="playlist-meta">
+          <div class="date">May 5, 2018</div>
+          <div class="note">Alison's wedding — see her review above.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="section-eyebrow" style="color: var(--gold);">The Dance Floor</div>
+    <h2>Do you need a dance floor?</h2>
+    <p class="section-lede">Only if one of your guests is going to bust moves like this guy.</p>
+    <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/92EDrSDHKqA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Bonus</div>
+    <h2>The Photo Booth</h2>
+    <p class="section-lede">We bring our iPad photo booth to weddings at the Morris Arboretum too. Custom strip designs, instant sharing to phones, and a compact setup that fits anywhere — even up in Out on a Limb.</p>
+
+    <div class="gallery">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/photo-booth/bride-and-friends-photo-booth-morris.jpg" alt="Bride and friends in the photo booth">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/photo-booth/ladies-photo-booth-morris.jpg" alt="Ladies in the photo booth">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/photo-booth/the-guys-morris-arboretum-photo-booth.jpg" alt="The guys in the photo booth">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/photo-booth/the-millers-photo-booth.jpg" alt="The Millers in the photo booth">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/morris-arboretum/2photo-booth-at-morris-arboretum.jpg" alt="Photo booth setup at Morris Arboretum">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/morris-arboretum/2side-view-photo-booth-at-morris-arboretum.jpg" alt="Side view of the photo booth at Morris Arboretum">
+      <img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/morris-arboretum/photo-booth-morris-arboretum.jpg" alt="Photo booth at Morris Arboretum">
+    </div>
+
+    <div class="shorts-wrap" style="margin-top: 48px;"><iframe src="https://www.youtube-nocookie.com/embed/bc7qrcgtEmM" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div class="shorts-wrap" style="margin-top: 24px;"><iframe src="https://www.youtube-nocookie.com/embed/0j5hwdvRjAE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="container">
+    <h2>Let's plan your Arboretum wedding</h2>
+    <p>No-obligation video call. We'll listen to what you want and tell you exactly how we'd make it happen.</p>
+    <a href="https://phillycustomdj.com/schedule-a-meeting/" class="primary">Schedule a meeting</a>
+    <a href="https://phillycustomdj.com/booking/" class="secondary">Request a quote</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p><a href="https://phillycustomdj.com">phillycustomdj.com</a> · Philly Custom DJ · Cherry Hill, NJ · <a href="mailto:adam@phillycustomdj.com">adam@phillycustomdj.com</a> · <a href="tel:9179512400">917-951-2400</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
