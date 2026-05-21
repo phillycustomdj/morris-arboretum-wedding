@@ -8,15 +8,15 @@
 <meta name="description" content="DJ and photo booth services for weddings at the Morris Arboretum since 2013. Real playlists, real reviews, real mixes.">
 <style>
   :root {
-    --ink: #0a0a0a;
+    --ink: #344A54;
     --paper: #ffffff;
-    --muted: #777;
-    --gold: #c9a961;
-    --gold-deep: #a8893f;
-    --green: #1f4a2c;
+    --muted: #6b7a82;
+    --blue: #4EA0D8;
+    --blue-deep: #2d7fb8;
+    --grey: #344A54;
     --spotify: #1DB954;
-    --soft: #f8f6f0;
-    --line: #ddd6c4;
+    --soft: #f0f6fb;
+    --line: #d8e3ea;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -27,20 +27,19 @@
   }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
 
-  header { padding: 18px 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); }
+  header { padding: 14px 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); }
   header .container { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.01em; }
-  .logo a { color: var(--ink); text-decoration: none; }
-  .logo span { color: var(--gold-deep); }
+  .logo a { display: block; }
+  .logo img { display: block; height: 48px; width: auto; }
   nav a { color: var(--ink); text-decoration: none; margin-left: 28px; font-size: 0.9rem; font-weight: 500; }
-  nav a:hover { color: var(--gold-deep); }
-  nav .btn { background: var(--ink); color: white; padding: 10px 20px; border-radius: 2px; font-weight: 700; letter-spacing: 0.02em; }
-  nav .btn:hover { color: white; background: var(--green); }
+  nav a:hover { color: var(--blue); }
+  nav .btn { background: var(--blue); color: white; padding: 10px 20px; border-radius: 4px; font-weight: 700; letter-spacing: 0.02em; }
+  nav .btn:hover { color: white; background: var(--blue-deep); }
 
   .hero {
     position: relative;
     min-height: 60vh;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a2a1f 100%);
+    background: linear-gradient(135deg, #344A54 0%, #4EA0D8 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -49,7 +48,7 @@
     padding: 80px 28px;
   }
   .hero-content { max-width: 800px; }
-  .hero .eyebrow { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.25em; font-weight: 700; margin-bottom: 24px; }
+  .hero .eyebrow { color: var(--blue); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.25em; font-weight: 700; margin-bottom: 24px; }
   .hero h1 {
     font-size: 4.2rem;
     font-weight: 800;
@@ -59,7 +58,7 @@
     text-shadow: 0 2px 16px rgba(0,0,0,0.4);
   }
   .hero .lede { font-size: 1.25rem; max-width: 640px; margin: 0 auto 32px; color: rgba(255,255,255,0.95); }
-  .hero .since { display: inline-block; padding: 8px 20px; border: 1px solid var(--gold); color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .hero .since { display: inline-block; padding: 8px 20px; border: 1px solid var(--blue); color: var(--blue); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
 
   .intro-video { padding: 64px 0; background: var(--ink); }
   .intro-video .container { max-width: 900px; }
@@ -75,14 +74,14 @@
   section.dark h2, section.dark h3 { color: white; }
   section.dark .section-lede { color: rgba(255,255,255,0.7); }
 
-  .section-eyebrow { color: var(--gold-deep); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 12px; }
+  .section-eyebrow { color: var(--blue-deep); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 12px; }
   section h2 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.1; }
   section .section-lede { color: var(--muted); margin-bottom: 40px; max-width: 720px; font-size: 1.1rem; }
 
   .sub { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--line); }
   .sub:first-of-type { border-top: 0; padding-top: 0; }
   .sub h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
-  .sub h3::before { content: ''; display: inline-block; width: 32px; height: 2px; background: var(--gold); vertical-align: middle; margin-right: 14px; }
+  .sub h3::before { content: ''; display: inline-block; width: 32px; height: 2px; background: var(--blue); vertical-align: middle; margin-right: 14px; }
   .sub p { color: var(--ink); margin-bottom: 20px; max-width: 720px; }
   .sub figure { margin: 24px 0; }
   .sub figure img { width: 100%; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
@@ -112,14 +111,14 @@
     margin-bottom: 28px;
     padding: 40px;
     background: white;
-    border-top: 3px solid var(--gold);
+    border-top: 3px solid var(--blue);
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
   }
   .testimonial:last-child { margin-bottom: 0; }
-  .testimonial .quote-mark { font-family: Georgia, serif; font-size: 4rem; line-height: 0.5; color: var(--gold); margin-bottom: 16px; }
+  .testimonial .quote-mark { font-family: Georgia, serif; font-size: 4rem; line-height: 0.5; color: var(--blue); margin-bottom: 16px; }
   .testimonial .quote { color: var(--ink); margin-bottom: 24px; font-size: 1.05rem; line-height: 1.7; }
-  .testimonial .who { font-weight: 700; color: var(--green); font-size: 0.9rem; padding-top: 16px; border-top: 1px solid var(--line); }
-  .stars { color: var(--gold); margin-bottom: 16px; letter-spacing: 3px; font-size: 1.1rem; }
+  .testimonial .who { font-weight: 700; color: var(--grey); font-size: 0.9rem; padding-top: 16px; border-top: 1px solid var(--line); }
+  .stars { color: var(--blue); margin-bottom: 16px; letter-spacing: 3px; font-size: 1.1rem; }
 
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 32px; }
   .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.3s; }
@@ -128,19 +127,19 @@
   .cta {
     padding: 96px 0;
     text-align: center;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a2a1f 100%);
+    background: linear-gradient(135deg, #344A54 0%, #4EA0D8 100%);
     color: white;
   }
   .cta h2 { font-size: 2.6rem; margin-bottom: 20px; color: white; }
   .cta p { color: rgba(255,255,255,0.85); margin-bottom: 36px; font-size: 1.1rem; }
   .cta a { display: inline-block; padding: 16px 32px; text-decoration: none; font-weight: 700; margin: 6px; letter-spacing: 0.04em; font-size: 0.9rem; text-transform: uppercase; }
-  .cta a.primary { background: var(--gold); color: var(--ink); }
+  .cta a.primary { background: var(--blue); color: var(--ink); }
   .cta a.primary:hover { background: white; }
   .cta a.secondary { background: transparent; color: white; border: 1px solid white; }
   .cta a.secondary:hover { background: white; color: var(--ink); }
 
   footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.9rem; background: var(--ink); }
-  footer a { color: var(--gold); text-decoration: none; }
+  footer a { color: var(--blue); text-decoration: none; }
   footer a:hover { color: white; }
 
   @media (max-width: 720px) {
@@ -162,11 +161,11 @@
 
 <header>
   <div class="container">
-    <div class="logo"><a href="https://phillycustomdj.com">Philly Custom <span>DJ</span></a></div>
+    <div class="logo"><a href="https://phillycustomdj.com"><img src="https://pub-571d013e1baf4764968f47e87c6ee416.r2.dev/DJEP/PhillyCustomDJ.jpg" alt="Philly Custom DJ"></a></div>
     <nav>
       <a href="https://phillycustomdj.com/wedding-dj-packages/">Weddings</a>
       <a href="https://phillycustomdj.com/photobooth/">Photo Booth</a>
-      <a href="https://phillycustomdj.com/booking/" class="btn">Get a Quote</a>
+      <a href="https://thecustomdjs.com/request_information.asp?djidnumber=23684" target="_blank" rel="noopener" class="btn">Get a Quote</a>
     </nav>
   </div>
 </header>
@@ -235,7 +234,7 @@
     <div class="sub">
       <h3>Pennock Garden</h3>
       <p>Pennock can host either a ceremony or a cocktail hour. Either way, we run on a battery-powered system tucked off to the side so it doesn't interfere with the view or the photos — and every guest still hears every word.</p>
-      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/AePfySLAJaA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="shorts-wrap"><iframe src="https://www.youtube-nocookie.com/embed/AePfySLAJaA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
 
     <div class="sub">
@@ -388,7 +387,7 @@
 
 <section class="dark">
   <div class="container">
-    <div class="section-eyebrow" style="color: var(--gold);">The Dance Floor</div>
+    <div class="section-eyebrow" style="color: var(--blue);">The Dance Floor</div>
     <h2>Do you need a dance floor?</h2>
     <p class="section-lede">Only if one of your guests is going to bust moves like this guy.</p>
     <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/92EDrSDHKqA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
@@ -421,7 +420,7 @@
     <h2>Let's plan your Arboretum wedding</h2>
     <p>No-obligation video call. We'll listen to what you want and tell you exactly how we'd make it happen.</p>
     <a href="https://phillycustomdj.com/schedule-a-meeting/" class="primary">Schedule a meeting</a>
-    <a href="https://phillycustomdj.com/booking/" class="secondary">Request a quote</a>
+    <a href="https://thecustomdjs.com/request_information.asp?djidnumber=23684" target="_blank" rel="noopener" class="secondary">Request a quote</a>
   </div>
 </div>
 
