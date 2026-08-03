@@ -68,6 +68,10 @@
   .shorts-wrap { position: relative; padding-bottom: 177.78%; height: 0; max-width: 400px; margin: 24px auto; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border-radius: 8px; }
   .shorts-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+  .shorts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; max-width: 840px; }
+  .shorts-grid .short-item { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border-radius: 8px; }
+  .shorts-grid .short-item iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
   section { padding: 88px 0; }
   section.alt { background: var(--soft); }
   section.dark { background: var(--ink); color: white; }
@@ -148,6 +152,7 @@
     .hero .lede { font-size: 1rem; }
     .mixcloud-grid { grid-template-columns: 1fr; }
     .playlist-grid { grid-template-columns: 1fr; }
+    .shorts-grid { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
     nav a:not(.btn) { display: none; }
     .gallery { grid-template-columns: repeat(2, 1fr); }
     section { padding: 56px 0; }
@@ -223,7 +228,7 @@
     <div class="sub">
       <h3>Baxter Memorial</h3>
       <p>The Baxter Memorial has a brick floor that's easier to stand on — particularly if you're wearing heels. It also makes a beautiful spot for a group photo right after the ceremony.</p>
-      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/zqf3g0HPpno" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="shorts-wrap"><iframe src="https://www.youtube-nocookie.com/embed/4KUJ8dQ45nk" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
 
     <div class="sub">
@@ -234,7 +239,7 @@
     <div class="sub">
       <h3>Pennock Garden</h3>
       <p>Pennock can host either a ceremony or a cocktail hour. Either way, we run on a battery-powered system tucked off to the side so it doesn't interfere with the view or the photos — and every guest still hears every word.</p>
-      <div class="shorts-wrap"><iframe src="https://www.youtube-nocookie.com/embed/AePfySLAJaA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/AePfySLAJaA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
 
     <div class="sub">
@@ -433,6 +438,20 @@
 
     <div class="shorts-wrap" style="margin-top: 48px;"><iframe src="https://www.youtube-nocookie.com/embed/bc7qrcgtEmM" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     <div class="shorts-wrap" style="margin-top: 24px;"><iframe src="https://www.youtube-nocookie.com/embed/0j5hwdvRjAE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-eyebrow">The Last Dance</div>
+    <h2>Closers</h2>
+    <p class="section-lede">How we send everyone off — the final moments of the night at the Arboretum.</p>
+
+    <div class="shorts-grid">
+      <div class="short-item"><iframe src="https://www.youtube-nocookie.com/embed/jEzNFCnpG_0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="short-item"><iframe src="https://www.youtube-nocookie.com/embed/fFJGnpmmSmk" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="short-item"><iframe src="https://www.youtube-nocookie.com/embed/zPMPt7vUEHU" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
   </div>
 </section>
 
