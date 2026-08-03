@@ -65,12 +65,13 @@
   .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
   .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-  .shorts-wrap { position: relative; padding-bottom: 177.78%; height: 0; max-width: 400px; margin: 24px auto; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border-radius: 8px; }
+  .shorts-wrap { position: relative; padding-bottom: 177.78%; height: 0; max-width: 320px; margin: 24px auto; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border-radius: 8px; }
   .shorts-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+  .short-item { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border-radius: 8px; }
+  .short-item iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
   .shorts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; max-width: 840px; }
-  .shorts-grid .short-item { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border-radius: 8px; }
-  .shorts-grid .short-item iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .shorts-duo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 620px; margin: 0 auto; }
 
   section { padding: 88px 0; }
   section.alt { background: var(--soft); }
@@ -152,7 +153,8 @@
     .hero .lede { font-size: 1rem; }
     .mixcloud-grid { grid-template-columns: 1fr; }
     .playlist-grid { grid-template-columns: 1fr; }
-    .shorts-grid { grid-template-columns: 1fr; max-width: 400px; margin: 32px auto 0; }
+    .shorts-grid { grid-template-columns: 1fr; max-width: 320px; margin: 32px auto 0; }
+    .shorts-duo { grid-template-columns: 1fr; max-width: 320px; }
     nav a:not(.btn) { display: none; }
     .gallery { grid-template-columns: repeat(2, 1fr); }
     section { padding: 56px 0; }
@@ -186,7 +188,10 @@
 
 <div class="intro-video">
   <div class="container">
-    <div class="shorts-wrap"><iframe src="https://www.youtube-nocookie.com/embed/qpQlYAT__QE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div class="shorts-duo">
+      <div class="short-item"><iframe src="https://www.youtube-nocookie.com/embed/qpQlYAT__QE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="short-item"><iframe src="https://www.youtube-nocookie.com/embed/0j5hwdvRjAE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
   </div>
 </div>
 
@@ -257,29 +262,29 @@
     <p class="section-lede">We work with you to build a custom mix and set up a sound system wherever you want guests to gather. Here are real cocktail hour mixes from real weddings, streaming on Mixcloud.</p>
 
     <div class="mixcloud-grid">
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-cocktail-hour%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-2%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-3-trees%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-4-vibin%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-5%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-6-the-stettlers%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-7-team-kill%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-8%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-9%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-10%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-11%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-ona-limb-volume-12%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-13%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-15%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-16%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-walk-cocktail-hour%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-2-new-orleans%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-3%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-4%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fwidener-plaza-cocktail-hour%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fwidener-plaza-cocktail-hour-volume-2%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fthe-rose-garden-cocktail-hour%2F&hide_cover=1"></iframe>
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Frose-garden-cocktail-hour-may-2025%2F&hide_cover=1"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-cocktail-hour%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-2%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-3-trees%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-4-vibin%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-5%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-6-the-stettlers%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-7-team-kill%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-8%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-9%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-10%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-11%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-ona-limb-volume-12%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-13%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-15%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fout-on-a-limb-volume-16%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-walk-cocktail-hour%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-2-new-orleans%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-3%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fpennock-garden-cocktail-hour-volume-4%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fwidener-plaza-cocktail-hour%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fwidener-plaza-cocktail-hour-volume-2%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Fthe-rose-garden-cocktail-hour%2F&hide_cover=1" loading="lazy"></iframe>
+      <iframe src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fmennu%2Frose-garden-cocktail-hour-may-2025%2F&hide_cover=1" loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -437,7 +442,6 @@
     </div>
 
     <div class="shorts-wrap" style="margin-top: 48px;"><iframe src="https://www.youtube-nocookie.com/embed/bc7qrcgtEmM" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    <div class="shorts-wrap" style="margin-top: 24px;"><iframe src="https://www.youtube-nocookie.com/embed/0j5hwdvRjAE" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
 </section>
 
